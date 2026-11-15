@@ -17,6 +17,7 @@
     cards.forEach(function (c) {
       var show = !mood || (' ' + c.dataset.moods + ' ').indexOf(' ' + mood + ' ') > -1;
       c.hidden = !show;
+      c.classList.toggle('first-visible', show && shown === 0);
       if (show) shown++;
     });
     empty.hidden = shown > 0;

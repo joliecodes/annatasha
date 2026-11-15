@@ -1,13 +1,15 @@
 ---
-title: Writing
+title: Stories from my Multiverse
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>{% include head.html %}</head>
 <body>
+<img class="deco-constellation" src="/assets/deco/space.webp" alt="" aria-hidden="true">
 <div class="blog">
   <aside class="side">
     <div class="bio">
+      <img class="deco-sprig" src="/assets/deco/pin.svg" alt="" aria-hidden="true">
       <a href="/" class="bio-logo" aria-label="Home">{% include logo.svg %}</a>
       <p class="kicker">about the writer</p>
       <h2>{{ site.data.bio.name }}</h2>
@@ -28,7 +30,7 @@ title: Writing
 
   <main class="feed">
     <header class="feed-head">
-      <h1>Writing</h1>
+      <h1>Stories from my Multiverse</h1>
     </header>
 
     <ol class="posts">
@@ -42,7 +44,7 @@ title: Writing
           <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
           {% if post.moods %}<div class="chips">{% for s in post.moods %}{% include mood-chip.html slug=s %}{% endfor %}</div>{% endif %}
           <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 38 }}</p>
-          <a class="read" href="{{ post.url }}">keep reading</a>
+          <a class="read" href="{{ post.url }}">read <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h21M17 1.5 22 6l-5 4.5"/></svg></a>
         </div>
         {% if thumb %}<a class="thumb" href="{{ post.url }}" tabindex="-1" aria-hidden="true"><img src="{{ thumb }}" alt="" loading="lazy"></a>{% endif %}
       </li>
