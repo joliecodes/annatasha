@@ -14,7 +14,7 @@
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--serif);font-size:19px;line-height:1.7;
+  font-family:var(--serif);font-size:17px;line-height:1.7;
   /* one faint wash of light, like sun through a window */
   background-image:radial-gradient(1200px 700px at 85% -10%, rgba(176,124,120,.08), transparent 60%),
                    radial-gradient(900px 600px at -10% 110%, rgba(108,134,96,.08), transparent 60%);
@@ -36,10 +36,10 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   animation:float-in .9s ease-out both;
 }
 .note-logo{width:60px;height:120px;margin:0 auto 1.6rem}
-.note-text{font-size:1.3rem;line-height:1.55;margin:.6rem 0 1.8rem;color:var(--ink)}
+.note-text{font-size:1.15rem;line-height:1.55;margin:.6rem 0 1.8rem;color:var(--ink)}
 .note-link{
   display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
-  font-style:italic;font-size:1.15rem;color:var(--rose);
+  font-style:italic;font-size:1.02rem;color:var(--rose);
   border-bottom:1px solid currentColor;padding-bottom:1px;transition:gap .25s ease;
 }
 .note-link svg{width:18px;height:18px}
@@ -58,12 +58,12 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   box-shadow:0 18px 40px -30px rgba(60,45,30,.3);
 }
 .bio-logo{display:block;width:34px;height:68px;margin-bottom:1.25rem}
-.bio h2{font-size:1.9rem;margin:0 0 .75rem}
-.bio-text{font-size:1rem;line-height:1.6;color:var(--soft)}
+.bio h2{font-size:1.55rem;margin:0 0 .75rem}
+.bio-text{font-size:.92rem;line-height:1.6;color:var(--soft)}
 .bio-text p{margin:0 0 .8rem}
 .bio-text p:last-child{margin-bottom:0}
 
-.feed-head h1{font-size:3.2rem;margin:0}
+.feed-head h1{font-size:2.6rem;margin:0}
 .feed-head .sub{margin:.1rem 0 0;font-style:italic;color:var(--muted)}
 
 /* mood chips */
@@ -103,7 +103,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .post-card{padding:2.1rem 0 2.2rem;border-top:1px solid var(--line)}
 .post-card:first-child{border-top:0;padding-top:.6rem}
 .post-card .date,.post-head .date{margin:0;font-style:italic;color:var(--muted);font-size:.92rem}
-.post-card h2{font-size:2rem;margin:.15rem 0 .7rem}
+.post-card h2{font-size:1.6rem;margin:.15rem 0 .7rem}
 .post-card h2 a{text-decoration:none;transition:color .2s}
 .post-card h2 a:hover{color:var(--rose)}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
@@ -121,15 +121,15 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .back{font-style:italic;color:var(--muted);text-decoration:none;font-size:.95rem}
 .back:hover{color:var(--rose)}
 .post-head{margin-bottom:2.5rem}
-.post-head h1{font-size:3.1rem;margin:.2rem 0 1.1rem}
-.prose{font-size:1.18rem;line-height:1.8}
+.post-head h1{font-size:2.5rem;margin:.2rem 0 1.1rem}
+.prose{font-size:1.06rem;line-height:1.8}
 .prose p{margin:0 0 1.4rem}
-.prose h2{font-size:1.7rem;margin:3rem 0 1rem}
-.prose h3{font-size:1.35rem;font-weight:500;margin:2.4rem 0 .8rem}
+.prose h2{font-size:1.45rem;margin:3rem 0 1rem}
+.prose h3{font-size:1.2rem;font-weight:500;margin:2.4rem 0 .8rem}
 .prose a{color:var(--rose)}
 .prose blockquote{
   margin:2.4rem 0;padding:0 0 0 1.4rem;border-left:2px solid var(--rose);
-  font-style:italic;font-size:1.35rem;line-height:1.55;color:var(--soft);
+  font-style:italic;font-size:1.2rem;line-height:1.55;color:var(--soft);
 }
 .prose blockquote p{margin:0}
 .prose hr{border:0;text-align:center;margin:3rem 0}
@@ -140,26 +140,26 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .prose p:has(> img:only-child) + p > em:only-child{display:block;text-align:center;font-size:.95rem;color:var(--muted);margin-top:-.8rem}
 .prose ul,.prose ol{padding-left:1.3rem;margin:0 0 1.4rem}
 .post-foot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);margin-top:3.5rem;padding-top:1.5rem}
-.sign{font-style:italic;font-size:1.2rem}
+.sign{font-style:italic;font-size:1.05rem}
 
 /* ---------- phones ---------- */
 @media (max-width:820px){
-  body{font-size:18px;background-attachment:scroll}
+  body{font-size:16px;background-attachment:scroll}
   .blog{grid-template-columns:1fr;gap:2.5rem;padding:2rem 1.25rem 4rem}
   .bio{position:static;display:grid;grid-template-columns:28px 1fr;column-gap:1rem;padding:1.4rem 1.3rem}
   .bio-logo{grid-row:span 3;width:28px;height:56px;margin:0}
-  .bio h2{font-size:1.5rem;margin-bottom:.5rem}
+  .bio h2{font-size:1.35rem;margin-bottom:.5rem}
   .bio .kicker{margin:0}
   .bio-text{grid-column:1 / -1;margin-top:.9rem}
-  .feed-head h1{font-size:2.5rem}
+  .feed-head h1{font-size:2.1rem}
   .mood-bar{flex-wrap:nowrap;overflow-x:auto;margin:1.4rem -1.25rem .3rem;padding:.2rem 1.25rem .5rem;scrollbar-width:none}
   .mood-bar::-webkit-scrollbar{display:none}
   .mood-bar .chip{flex:none}
   .mood-bar .chip::after,.mood-bar .chip::before{display:none}
-  .post-card h2{font-size:1.7rem}
+  .post-card h2{font-size:1.45rem}
   .reading{padding:1.75rem 1.25rem 4rem}
   .topbar{margin-bottom:2.5rem}
-  .post-head h1{font-size:2.4rem}
-  .prose{font-size:1.1rem}
+  .post-head h1{font-size:2rem}
+  .prose{font-size:1.04rem}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
