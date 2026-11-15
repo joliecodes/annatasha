@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}annatasha</title>
+<meta name="description" content="Writing by Tasha. Tender, unhinged, and everything in between.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  // Sends you to the editor after accepting an invite / logging in from the homepage
+  if (window.netlifyIdentity) {
+    netlifyIdentity.on("init", function (user) {
+      if (!user) netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
+    });
+  }
+</script>

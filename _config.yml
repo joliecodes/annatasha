@@ -1,0 +1,6 @@
+title: annatasha
+url: "https://www.annatasha.com"
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+timezone: Asia/Kuala_Lumpur
+exclude: [README.md, netlify.toml, Gemfile, Gemfile.lock, vendor]

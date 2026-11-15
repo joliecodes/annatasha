@@ -1,0 +1,46 @@
+---
+title: Writing
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include head.html %}</head>
+<body>
+<div class="blog">
+  <aside class="bio">
+    <a href="/" class="bio-logo" aria-label="Home">{% include logo.svg %}</a>
+    <p class="kicker">about the writer</p>
+    <h2>{{ site.data.bio.name }}</h2>
+    <div class="bio-text">{{ site.data.bio.text | markdownify }}</div>
+  </aside>
+
+  <main class="feed">
+    <header class="feed-head">
+      <h1>Writing</h1>
+      <p class="sub">pick a mood, any mood</p>
+    </header>
+
+    <nav class="mood-bar" aria-label="Filter posts by mood">
+      <button class="chip chip-all is-on" data-mood="" type="button">All</button>
+      {% for m in site.data.moods %}
+      <button class="chip" type="button" data-mood="{{ m.slug }}" data-caption="{{ m.caption }}" style="--c:{{ m.color }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ m.icon }}</svg>{{ m.name }}</button>
+      {% endfor %}
+    </nav>
+    <p class="mood-now" aria-live="polite"></p>
+
+    <ol class="posts">
+      {% for post in site.posts %}
+      <li class="post-card" data-moods="{{ post.moods | join: ' ' }}">
+        <p class="date">{{ post.date | date: "%-d %B %Y" }}</p>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        {% if post.moods %}<div class="chips">{% for s in post.moods %}{% include mood-chip.html slug=s %}{% endfor %}</div>{% endif %}
+        <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 38 }}</p>
+        <a class="read" href="{{ post.url }}">keep reading</a>
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="empty" hidden>Nothing in this mood yet. Give her time.</p>
+  </main>
+</div>
+<script src="/assets/moods.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include head.html %}</head>
+<body>
+<div class="reading">
+  <nav class="topbar">
+    <a href="/blog/" class="mini-logo" aria-label="All writing">{% include logo.svg %}</a>
+    <a href="/blog/" class="back">all writing</a>
+  </nav>
+  <header class="post-head">
+    <p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.moods %}<div class="chips">{% for s in page.moods %}{% include mood-chip.html slug=s %}{% endfor %}</div>{% endif %}
+  </header>
+  <article class="prose">{{ content }}</article>
+  <footer class="post-foot">
+    <span class="sign">— Tasha</span>
+    <a href="/blog/" class="back">back to all writing</a>
+  </footer>
+</div>
+</body>
+</html>

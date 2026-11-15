@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://www.annatasha.com
+display_url: https://www.annatasha.com
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: [date, title]
+    summary: "{{title}} · {{year}}-{{month}}-{{day}}"
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: post }
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: "D MMM YYYY", time_format: false }
+      - label: Moods
+        name: moods
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: "Unhinged (overstimulated)", value: unhinged }
+          - { label: "Romantic (present and happy)", value: romantic }
+          - { label: "Analysing the multiverse (reflecting)", value: analysing-the-multiverse }
+          - { label: "Nostalgia (reminiscing)", value: nostalgia }
+          - { label: "Healing-ish (progress)", value: healing-ish }
+          - { label: "Big Feelings (processing)", value: big-feelings }
+      - { label: Words, name: body, widget: markdown, hint: "Photo captions: add a line of *italics* right under a photo." }
+
+  - name: site
+    label: Site text
+    files:
+      - label: About the writer
+        name: bio
+        file: _data/bio.yml
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Bio, name: text, widget: markdown, buttons: [italic, bold, link] }
+      - label: Landing page note
+        name: landing
+        file: _data/landing.yml
+        fields:
+          - { label: Note, name: note, widget: text }
+          - { label: Link text, name: link_text, widget: string }
