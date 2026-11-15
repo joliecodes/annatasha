@@ -6,6 +6,10 @@
   <nav class="topbar">
     <a href="/blog/" class="mini-logo" aria-label="All writing">{% include logo.svg %}</a>
     <a href="/blog/" class="back">all writing</a>
+    <div class="sizer" role="group" aria-label="Text size">
+      <button type="button" data-step="-1" aria-label="Smaller text"><span class="a-sm">A</span></button>
+      <button type="button" data-step="1" aria-label="Bigger text"><span class="a-lg">A</span></button>
+    </div>
   </nav>
   <header class="post-head">
     <p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
@@ -14,9 +18,23 @@
   </header>
   <article class="prose">{{ content }}</article>
   <footer class="post-foot">
-    <span class="sign">— Tasha</span>
+    <span class="sign">— Annatasha</span>
     <a href="/blog/" class="back">back to all writing</a>
   </footer>
 </div>
+<script>
+(function () {
+  var sizes = [0.88, 1, 1.12, 1.26], key = 'reader-size', i = 1;
+  try { var saved = parseInt(localStorage.getItem(key), 10); if (saved >= 0 && saved < sizes.length) i = saved; } catch (e) {}
+  var root = document.documentElement, btns = document.querySelectorAll('.sizer button');
+  function set() {
+    root.style.setProperty('--reader', sizes[i]);
+    btns[0].disabled = i === 0; btns[1].disabled = i === sizes.length - 1;
+    try { localStorage.setItem(key, i); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { i = Math.min(sizes.length - 1, Math.max(0, i + +b.dataset.step)); set(); }); });
+  set();
+})();
+</script>
 </body>
 </html>
