@@ -24,7 +24,7 @@
 </div>
 <script>
 (function () {
-  var sizes = [0.88, 1, 1.12, 1.26], key = 'reader-size', i = 1;
+  var sizes = [0.8, 0.88, 1, 1.12, 1.26], key = 'reader-size-v2', i = 1;
   try { var saved = parseInt(localStorage.getItem(key), 10); if (saved >= 0 && saved < sizes.length) i = saved; } catch (e) {}
   var root = document.documentElement, btns = document.querySelectorAll('.sizer button');
   function set() {
