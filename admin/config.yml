@@ -83,3 +83,15 @@ collections:
               - { label: Slug, name: slug, widget: hidden }
               - { label: Colour, name: color, widget: hidden }
               - { label: Icon, name: icon, widget: hidden }
+      - label: Thoughts box (comments)
+        name: comments
+        file: _data/comments.yml
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Button text, name: button, widget: string }
+          - { label: Name box hint, name: name_placeholder, widget: string }
+          - { label: Message box hint, name: message_placeholder, widget: string }
+          - { label: Message after sending, name: thanks, widget: string }
+          - { label: Message when there are no thoughts yet, name: empty, widget: string }
+          - { label: API, name: api, widget: hidden }
+          - { label: Turnstile site key, name: turnstile_sitekey, widget: hidden }

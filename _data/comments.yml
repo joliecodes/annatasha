@@ -1,0 +1,11 @@
+# Thoughts? box on post pages
+# api and turnstile_sitekey are filled in by Claude once Cloudflare is set up.
+# The box stays hidden while either is empty.
+api: "https://annatasha-comments.joliecodes.workers.dev"
+turnstile_sitekey: ""
+heading: "Thoughts?"
+button: "send it into the void"
+name_placeholder: "your name"
+message_placeholder: "say something nice (or unhinged)"
+thanks: "Sent! It'll appear once Annatasha has a read."
+empty: "No thoughts yet. Be the first."

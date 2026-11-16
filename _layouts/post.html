@@ -6,6 +6,7 @@
 <div class="blog">
   <aside class="side">
     {% include bio-card.html compact=true %}
+    <div class="thoughts-slot-side"></div>
     {% include timeline.html exclude=page.url %}
   </aside>
 
@@ -29,6 +30,7 @@
     <span class="sign">— Annatasha</span>
     <a href="/blog/timeline/?view=list" class="back">back to all stories</a>
   </footer>
+  <div class="thoughts-slot-end">{% include comments.html %}</div>
   {% assign shown = 0 %}{% capture more %}{% for post in site.posts %}{% if post.url != page.url and shown < 4 %}{% assign shown = shown | plus: 1 %}
       <li><a href="{{ post.url }}">{{ post.title }}</a><span>{{ post.date | date: "%-d %b %Y" }}</span></li>{% endif %}{% endfor %}{% endcapture %}
   {% if shown > 0 %}

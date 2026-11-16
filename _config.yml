@@ -3,4 +3,4 @@ url: "https://blog.annatasha.com"
 permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 timezone: Asia/Kuala_Lumpur
-exclude: [README.md, Gemfile, Gemfile.lock, vendor, .github]
+exclude: [README.md, Gemfile, Gemfile.lock, vendor, .github, cloudflare]

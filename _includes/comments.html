@@ -1,0 +1,16 @@
+{% if site.data.comments.api != "" and site.data.comments.turnstile_sitekey != "" %}
+<section class="thoughts" id="thoughts" data-api="{{ site.data.comments.api }}" data-sitekey="{{ site.data.comments.turnstile_sitekey }}" data-post="{{ page.url }}" data-title="{{ page.title | escape }}" data-thanks="{{ site.data.comments.thanks | escape }}" data-empty="{{ site.data.comments.empty | escape }}" hidden>
+  <p class="kicker thoughts-head">{{ site.data.comments.heading }}</p>
+  <div class="thoughts-scroll">
+    <form class="thoughts-form" novalidate>
+      <input name="name" type="text" maxlength="60" placeholder="{{ site.data.comments.name_placeholder | escape }}" aria-label="Your name" required>
+      <textarea name="message" rows="3" maxlength="2000" placeholder="{{ site.data.comments.message_placeholder | escape }}" aria-label="Your thought" required></textarea>
+      <div class="thoughts-captcha"></div>
+      <button type="submit" class="thoughts-send">{{ site.data.comments.button }} <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h21M17 1.5 22 6l-5 4.5"/></svg></button>
+      <p class="thoughts-status" aria-live="polite"></p>
+    </form>
+    <ol class="thoughts-list"></ol>
+  </div>
+</section>
+<script src="/assets/comments.js?v={{ site.time | date: '%s' }}" defer></script>
+{% endif %}
