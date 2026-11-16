@@ -1,9 +1,9 @@
 # annatasha.com
 
-Landing page and blog. Jekyll site with a writing desk (Sveltia CMS) at **/admin**, hosted on GitHub Pages at blog.annatasha.com.
+Landing page and blog. Jekyll site with a writing desk (Sveltia CMS) at **/admin**, hosted on GitHub Pages at annatasha.com.
 
 ## Writing (day to day)
-1. Go to **blog.annatasha.com/admin** and sign in with your access token.
+1. Go to **annatasha.com/admin** and sign in with your access token.
 2. **Posts → New Post.** Add a title, a date and your moods, then write.
    - Photos: use the image button in the editor. To add a caption, put a line of *italics* right under the photo.
    - A line made of `---` becomes a little ✦ ✦ ✦ divider.
@@ -22,10 +22,5 @@ Moods can be renamed in the editor, but a new one needs an icon, so ask Claude t
 
 ## Hosting
 - The site is built and published by **GitHub Pages** on every push to `main` (see `.github/workflows/pages.yml`).
-- Address: **blog.annatasha.com**. DNS at Hover: `CNAME` record, host `blog` → `joliecodes.github.io`.
+- Address: **annatasha.com**. DNS at Hover: four `A` records for `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153; `CNAME` `www` → `joliecodes.github.io`.
 - The writing desk (/admin) is Sveltia CMS. Sign in with **Sign In Using Access Token**, using a GitHub fine-grained token for `joliecodes/annatasha` with Contents: Read and write. If it expires, make a new one the same way.
-
-## Moving to annatasha.com later
-1. GitHub repo → Settings → Pages → Custom domain → `annatasha.com`, and change the `CNAME` file to match.
-2. Hover DNS for `@`: four `A` records → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153; `CNAME` `www` → `joliecodes.github.io`. Remove the Squarespace records.
-3. Update `url` in `_config.yml` and `site_url` / `display_url` in `admin/config.yml`.

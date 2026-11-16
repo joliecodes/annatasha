@@ -1,5 +1,5 @@
 title: annatasha
-url: "https://blog.annatasha.com"
+url: "https://annatasha.com"
 permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 timezone: Asia/Kuala_Lumpur

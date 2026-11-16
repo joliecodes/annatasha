@@ -3,8 +3,8 @@ backend:
   repo: joliecodes/annatasha
   branch: main
 
-site_url: https://blog.annatasha.com
-display_url: https://blog.annatasha.com
+site_url: https://annatasha.com
+display_url: https://annatasha.com
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 

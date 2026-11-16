@@ -1,12 +1,12 @@
-// annatasha-comments — the "Thoughts?" box for blog.annatasha.com
+// annatasha-comments — the "Thoughts?" box for annatasha.com
 // Bindings (Cloudflare → Worker → Settings):
 //   DB               D1 database "annatasha-comments"
 //   TURNSTILE_SECRET secret  (Turnstile widget → secret key)
 //   ADMIN_PASSWORD   secret  (your approval-page password)
 //   NTFY_TOPIC       variable (ntfy topic for phone alerts; leave empty to turn alerts off)
 
-const SITE = 'https://blog.annatasha.com';
-const ALLOWED_ORIGINS = [SITE, 'http://localhost:4000', 'http://127.0.0.1:4000'];
+const SITE = 'https://annatasha.com';
+const ALLOWED_ORIGINS = [SITE, 'https://www.annatasha.com', 'https://blog.annatasha.com', 'http://localhost:4000', 'http://127.0.0.1:4000'];
 const MAX_NAME = 60, MAX_MESSAGE = 2000;
 
 export default {
