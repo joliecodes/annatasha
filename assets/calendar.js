@@ -90,10 +90,12 @@
   grid.addEventListener('focusin', function (e) { var a = e.target.closest('.cal-story'); if (a) showCard(a); });
   grid.addEventListener('focusout', hideCard);
   grid.addEventListener('click', function (e) {
-    var a = e.target.closest('.cal-story');
-    if (a && touch && openFor !== a) { e.preventDefault(); showCard(a); }
+    if (!touch) return;
+    var cell = e.target.closest('.cal-cell.has-story'); if (!cell) return;
+    var a = e.target.closest('.cal-story') || cell.querySelector('.cal-story');
+    if (openFor !== a) { e.preventDefault(); showCard(a); }
   });
-  document.addEventListener('click', function (e) { if (touch && !e.target.closest('.cal-story') && !e.target.closest('.cal-card')) { card.hidden = true; openFor = null; } });
+  document.addEventListener('click', function (e) { if (touch && !e.target.closest('.cal-cell.has-story') && !e.target.closest('.cal-card')) { card.hidden = true; openFor = null; } });
   window.addEventListener('scroll', function () { if (!touch) { card.hidden = true; openFor = null; } }, { passive: true });
 
   // ---- calendar | list switch ----
