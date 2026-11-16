@@ -1,6 +1,6 @@
 # annatasha.com
 
-Landing page and blog. Jekyll site with a writing desk (Decap CMS) at **/admin**, hosted on Netlify.
+Landing page and blog. Jekyll site with a writing desk (Sveltia CMS) at **/admin**, hosted on GitHub Pages at blog.annatasha.com.
 
 ## Writing (day to day)
 1. Go to **blog.annatasha.com/admin** and sign in with your access token.
