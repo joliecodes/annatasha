@@ -1,9 +1,12 @@
-# Builds the Jekyll site and publishes it to GitHub Pages on every push to main
+# Builds the Jekyll site and publishes it to GitHub Pages on every push to main,
+# and every hour so scheduled (future-dated) posts go live on time
 name: Publish site
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '2 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,7 +16,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
