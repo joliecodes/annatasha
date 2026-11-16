@@ -1,0 +1,13 @@
+      {% assign thumb = nil %}
+      {% assign img_parts = include.post.content | split: '<img' %}
+      {% if img_parts.size > 1 %}{% assign src_parts = img_parts[1] | split: 'src="' %}{% if src_parts.size > 1 %}{% assign thumb = src_parts[1] | split: '"' | first %}{% endif %}{% endif %}
+      <li class="post-card{% if thumb %} has-thumb{% endif %}" data-moods="{{ include.post.moods | join: ' ' }}">
+        <div class="post-text">
+          <p class="date">{{ include.post.date | date: "%-d %B %Y" }}</p>
+          <h2><a href="{{ include.post.url }}">{{ include.post.title }}</a></h2>
+          {% if include.post.moods %}<div class="chips">{% for s in include.post.moods %}{% include mood-chip.html slug=s %}{% endfor %}</div>{% endif %}
+          <p class="excerpt">{{ include.post.excerpt | strip_html | truncatewords: 38 }}</p>
+          <a class="read" href="{{ include.post.url }}">read <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h21M17 1.5 22 6l-5 4.5"/></svg></a>
+        </div>
+        {% if thumb %}<a class="thumb" href="{{ include.post.url }}" tabindex="-1" aria-hidden="true"><img src="{{ thumb }}" alt="" loading="lazy"></a>{% endif %}
+      </li>

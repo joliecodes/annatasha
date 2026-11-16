@@ -1,5 +1,5 @@
 (function () {
-  var stories = window.STORIES || [], colours = window.MOOD_COLOURS || {};
+  var stories = window.STORIES || [], moods = window.MOODS || {};
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   var grid = document.querySelector('.cal-grid'), label = document.querySelector('.cal-month');
@@ -36,7 +36,8 @@
       cell.appendChild(el('span', 'cal-day', String(d)));
       (byDay[key] || []).forEach(function (s) {
         var a = el('a', 'cal-story', s.t); a.href = s.u; a.title = s.t;
-        var c = s.m && s.m.length ? colours[s.m[0]] : null;
+        var c = s.m && s.m.length && moods[s.m[0]] ? moods[s.m[0]].c : null;
+        a._story = s;
         if (c) a.style.setProperty('--c', c);
         cell.appendChild(a); cell.classList.add('has-story');
       });
@@ -56,4 +57,56 @@
   });
   btns.forEach(function (b) { b.addEventListener('click', function () { cur = shift(cur, +b.dataset.step); render(); }); });
   render();
+
+  // ---- hover / tap preview card ----
+  var card = el('div', 'cal-card'); card.hidden = true; document.body.appendChild(card);
+  var touch = window.matchMedia('(hover: none)').matches, openFor = null, hideT;
+  function showCard(a) {
+    var s = a._story; if (!s) return;
+    clearTimeout(hideT);
+    card.innerHTML = '';
+    if (s.i) { var im = el('img', 'cal-card-img'); im.src = s.i; im.alt = ''; card.appendChild(im); }
+    var body = el('div', 'cal-card-body');
+    body.appendChild(el('p', 'date', s.nice));
+    body.appendChild(el('p', 'cal-card-title', s.t));
+    if (s.m && s.m.length) {
+      var chips = el('div', 'cal-card-moods');
+      s.m.forEach(function (m) { if (!moods[m]) return; var c = el('span', 'cal-card-mood', moods[m].n); c.style.setProperty('--c', moods[m].c); chips.appendChild(c); });
+      body.appendChild(chips);
+    }
+    if (s.x) body.appendChild(el('p', 'cal-card-ex', s.x));
+    if (touch) { var r = el('a', 'read', 'read →'); r.href = s.u; body.appendChild(r); }
+    card.appendChild(body);
+    card.hidden = false;
+    var rect = a.getBoundingClientRect(), cw = card.offsetWidth, ch = card.offsetHeight;
+    var left = Math.min(Math.max(12, rect.left + rect.width / 2 - cw / 2), window.innerWidth - cw - 12);
+    var top = rect.top - ch - 10; if (top < 12) top = rect.bottom + 10;
+    card.style.left = (left + window.scrollX) + 'px'; card.style.top = (top + window.scrollY) + 'px';
+    openFor = a;
+  }
+  function hideCard() { hideT = setTimeout(function () { card.hidden = true; openFor = null; }, 80); }
+  grid.addEventListener('mouseover', function (e) { var a = e.target.closest('.cal-story'); if (a && !touch) showCard(a); });
+  grid.addEventListener('mouseout', function (e) { var a = e.target.closest('.cal-story'); if (a && !touch) hideCard(); });
+  grid.addEventListener('focusin', function (e) { var a = e.target.closest('.cal-story'); if (a) showCard(a); });
+  grid.addEventListener('focusout', hideCard);
+  grid.addEventListener('click', function (e) {
+    var a = e.target.closest('.cal-story');
+    if (a && touch && openFor !== a) { e.preventDefault(); showCard(a); }
+  });
+  document.addEventListener('click', function (e) { if (touch && !e.target.closest('.cal-story') && !e.target.closest('.cal-card')) { card.hidden = true; openFor = null; } });
+  window.addEventListener('scroll', function () { if (!touch) { card.hidden = true; openFor = null; } }, { passive: true });
+
+  // ---- calendar | list switch ----
+  var tabs = document.querySelectorAll('.view-switch button');
+  var vCal = document.querySelector('.view-calendar'), vList = document.querySelector('.view-list');
+  function setView(v, save) {
+    tabs.forEach(function (t) { var on = t.dataset.view === v; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on); });
+    vCal.hidden = v !== 'calendar'; vList.hidden = v !== 'list';
+    card.hidden = true;
+    if (save) {
+      history.replaceState(null, '', (v === 'list' ? location.pathname + '?view=list' : location.pathname) + location.hash);
+    }
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { setView(t.dataset.view, true); }); });
+  setView(new URLSearchParams(location.search).get('view') === 'list' ? 'list' : 'calendar', false);
 })();
