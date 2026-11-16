@@ -119,13 +119,13 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .post-card.first-visible{padding-top:.6rem}
 .post-card.first-visible::before{display:none}
 .post-card .date,.post-head .date{margin:0;font-style:italic;color:var(--muted);font-size:.92rem}
-.post-card h2{font-size:1.4rem;margin:.15rem 0 .7rem}
+.post-card h2{font-size:1.85rem;margin:.15rem 0 .7rem}
 .post-card h2 a{text-decoration:none;transition:color .2s}
 .post-card h2 a:hover{color:var(--rose)}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem}
 .chips .chip{font-size:.8rem;padding:.32rem .65rem .35rem .5rem}
 .chips .chip svg{width:14px;height:14px}
-.excerpt{margin:1rem 0 .5rem;color:var(--soft)}
+.excerpt{margin:1rem 0 .5rem;color:var(--soft);font-size:calc(1.04rem * .88);line-height:1.8}
 .read{display:inline-flex;align-items:center;gap:.5rem;font-style:italic;color:var(--rose);text-decoration:none}
 .read svg{width:26px;height:13px;transition:transform .25s ease}
 .read:hover svg{transform:translateX(4px)}
@@ -209,8 +209,8 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thoughts-captcha:empty{display:none}
 .thoughts-top{display:flex;align-items:baseline;gap:.7rem;margin:0 0 .5rem}
 .thoughts-top .thoughts-head{margin:0}
-.thoughts-toggle{display:inline-flex;align-items:center;gap:.3rem;font:inherit;font-size:.8rem;font-style:normal;color:var(--rose);background:none;border:0;padding:0;cursor:pointer}
-.thoughts-toggle svg{width:14px;height:14px}
+.thoughts-toggle{position:relative;top:2px;display:inline-flex;align-items:center;gap:.3rem;font:inherit;font-size:.74rem;font-style:normal;color:var(--rose);background:none;border:0;padding:0;cursor:pointer}
+.thoughts-toggle svg{width:13px;height:13px}
 .thoughts-toggle:hover,.thoughts-toggle.is-open{text-decoration:underline;text-underline-offset:3px}
 .thoughts-form{padding-bottom:.2rem}
 .thoughts-send{display:inline-block;font:inherit;font-size:.8rem;color:#fffdf8;background:var(--rose);border:0;border-radius:999px;padding:.42rem 1rem;cursor:pointer;transition:background .2s,transform .2s}
@@ -311,6 +311,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   .mood-bar{flex-wrap:wrap;margin:.5rem 0 .2rem}
   .mood-bar .chip::after,.mood-bar .chip::before{display:none}
   .post-card h2{font-size:1.3rem}
+  .excerpt{font-size:1rem}
   .post-card.has-thumb{grid-template-columns:1fr;gap:1rem}
   .thumb{order:-1}
   .thumb{margin-top:0}
