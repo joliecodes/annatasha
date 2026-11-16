@@ -22,16 +22,14 @@ collections:
       - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "D MMM YYYY", time_format: false }
       - label: Moods
         name: moods
-        widget: select
+        widget: relation
+        collection: site
+        file: moods
+        search_fields: ["moods.*.name"]
+        display_fields: ["moods.*.name"]
+        value_field: "moods.*.slug"
         multiple: true
         required: false
-        options:
-          - { label: "Unhinged (overstimulated)", value: unhinged }
-          - { label: "Romantic (present and happy)", value: romantic }
-          - { label: "Analysing the multiverse (reflecting)", value: analysing-the-multiverse }
-          - { label: "Nostalgia (reminiscing)", value: nostalgia }
-          - { label: "Healing-ish (progress)", value: healing-ish }
-          - { label: "Big Feelings (processing)", value: big-feelings }
       - { label: Words, name: body, widget: markdown, hint: "Photo captions: add a line of *italics* right under a photo." }
 
   - name: site
@@ -47,5 +45,31 @@ collections:
         name: landing
         file: _data/landing.yml
         fields:
+          - { label: Small line above the note, name: kicker, widget: string }
           - { label: Note, name: note, widget: text }
           - { label: Link text, name: link_text, widget: string }
+      - label: Blog page text
+        name: blog
+        file: _data/blog.yml
+        fields:
+          - { label: Page heading, name: heading, widget: string }
+          - { label: Small line above your name, name: bio_kicker, widget: string }
+          - { label: Small line above the moods, name: moods_kicker, widget: string }
+          - { label: Message when a mood has no posts, name: empty_text, widget: string }
+      - label: Moods
+        name: moods
+        file: _data/moods.yml
+        fields:
+          - label: Moods
+            name: moods
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: true
+            summary: "{{fields.name}} ({{fields.caption}})"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Hover caption, name: caption, widget: string }
+              - { label: Slug, name: slug, widget: hidden }
+              - { label: Colour, name: color, widget: hidden }
+              - { label: Icon, name: icon, widget: hidden }

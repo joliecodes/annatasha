@@ -9,14 +9,16 @@ Landing page and blog. Jekyll site with a writing desk (Decap CMS) at **/admin**
    - A line made of `---` becomes a little ✦ ✦ ✦ divider.
 3. Click **Publish**. The site updates in about a minute.
 
-You can edit **About the writer** and the **Landing page note** under **Site text**.
+Under **Site text** you can edit:
+- **About the writer**: your name and bio
+- **Landing page note**: the small line, the note, and the link text
+- **Blog page text**: the heading, the small lines above your name and the moods, and the empty-mood message
+- **Moods**: each mood's name and hover caption, and their order
 
 The two sample posts are in `_posts/`. Delete them from the editor once your real first post is in.
 
-## Adding a new mood later
-Add it in two places, using the same `slug`:
-- `_data/moods.yml`: name, caption (shown in the hover bubble), colour, icon
-- `admin/config.yml`: under Moods → options
+## Adding a brand-new mood
+Moods can be renamed in the editor, but a new one needs an icon, so ask Claude to add it to `_data/moods.yml`. It shows up in the post editor automatically.
 
 ## Going live (one-time setup)
 1. **GitHub:** create a new repository (e.g. `annatasha-site`), then upload everything in this folder to the `main` branch.

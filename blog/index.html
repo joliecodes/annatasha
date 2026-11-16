@@ -1,5 +1,5 @@
 ---
-title: Stories from my Multiverse
+blog_index: true
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,16 +11,16 @@ title: Stories from my Multiverse
     <div class="bio">
       <img class="deco-sprig" src="/assets/deco/pin.svg" alt="" aria-hidden="true">
       <a href="/" class="bio-logo" aria-label="Home">{% include logo.svg %}</a>
-      <p class="kicker">about the writer</p>
+      <p class="kicker">{{ site.data.blog.bio_kicker }}</p>
       <h2>{{ site.data.bio.name }}</h2>
       <div class="bio-text">{{ site.data.bio.text | markdownify }}</div>
     </div>
 
     <div class="moods">
-      <p class="kicker">pick a mood, any mood</p>
+      <p class="kicker">{{ site.data.blog.moods_kicker }}</p>
       <nav class="mood-bar" aria-label="Filter posts by mood">
         <button class="chip chip-all is-on" data-mood="" type="button">All</button>
-        {% for m in site.data.moods %}
+        {% for m in site.data.moods.moods %}
         <button class="chip" type="button" data-mood="{{ m.slug }}" data-caption="{{ m.caption }}" style="--c:{{ m.color }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ m.icon }}</svg>{{ m.name }}</button>
         {% endfor %}
       </nav>
@@ -30,7 +30,7 @@ title: Stories from my Multiverse
 
   <main class="feed">
     <header class="feed-head">
-      <h1>Stories from my Multiverse</h1>
+      <h1>{{ site.data.blog.heading }}</h1>
     </header>
 
     <ol class="posts">
@@ -50,7 +50,7 @@ title: Stories from my Multiverse
       </li>
       {% endfor %}
     </ol>
-    <p class="empty" hidden>Nothing in this mood yet. Give her time.</p>
+    <p class="empty" hidden>{{ site.data.blog.empty_text }}</p>
   </main>
 </div>
 <script src="/assets/moods.js"></script>
