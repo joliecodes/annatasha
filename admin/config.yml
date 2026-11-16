@@ -35,6 +35,7 @@ collections:
         value_field: "moods.*.slug"
         multiple: true
         required: false
+      - { label: "Potty Mouth", name: potty_mouth, widget: boolean, default: false, required: false, hint: "Switch on if this one has strong language. A little label shows under the title." }
       - { label: "Live on the site", name: published, widget: boolean, default: true, required: false, hint: "Switch off to keep this as a draft. It saves, but stays hidden until you switch it back on and Save." }
       - { label: Words, name: body, widget: markdown, hint: "Photo captions: add a line of *italics* right under a photo." }
 
@@ -65,6 +66,7 @@ collections:
           - { label: Message when a mood has no posts, name: empty_text, widget: string }
           - { label: Small line above the older posts list, name: earlier_kicker, widget: string }
           - { label: Label above older entries on the blog page, name: older_kicker, widget: string }
+          - { label: Potty Mouth label under post titles, name: potty_label, widget: string }
           - { label: Calendar page heading, name: timeline_heading, widget: string }
           - { label: Calendar page subtitle, name: timeline_sub, widget: string }
       - label: Moods
