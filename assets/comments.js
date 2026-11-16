@@ -53,6 +53,16 @@
   }
   form.addEventListener('focusin', loadTurnstile);
 
+  var toggle = box.querySelector('.thoughts-toggle'), scroller = box.querySelector('.thoughts-scroll');
+  toggle.addEventListener('click', function () {
+    var open = form.hidden;
+    form.hidden = !open;
+    toggle.setAttribute('aria-expanded', open);
+    toggle.classList.toggle('is-open', open);
+    if (open) { scroller.scrollTop = 0; loadTurnstile(); form.name.focus({ preventScroll: true }); }
+    if (window.fitSide) window.fitSide();
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var name = form.name.value.trim(), message = form.message.value.trim();

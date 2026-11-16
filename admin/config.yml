@@ -88,6 +88,7 @@ collections:
         file: _data/comments.yml
         fields:
           - { label: Heading, name: heading, widget: string }
+          - { label: Link that opens the form, name: share_label, widget: string }
           - { label: Button text, name: button, widget: string }
           - { label: Name box hint, name: name_placeholder, widget: string }
           - { label: Message box hint, name: message_placeholder, widget: string }

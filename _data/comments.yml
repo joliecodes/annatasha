@@ -4,6 +4,7 @@
 api: "https://annatasha-comments.joliecodes.workers.dev"
 turnstile_sitekey: "0x4AAAAAAGC87LwolhptNBgz"
 heading: "Thoughts?"
+share_label: "share yours"
 button: "send it into the void"
 name_placeholder: "your name"
 message_placeholder: "say something nice (or unhinged)"
