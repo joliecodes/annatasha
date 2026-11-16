@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>{% include head.html %}</head>
-<body>
+<body class="reading-page">
 <img class="deco-constellation" src="/assets/deco/space.webp" alt="" aria-hidden="true">
 <div class="blog">
   <aside class="side">
@@ -29,6 +29,16 @@
     <span class="sign">— Annatasha</span>
     <a href="/blog/timeline/?view=list" class="back">back to all stories</a>
   </footer>
+  {% assign shown = 0 %}{% capture more %}{% for post in site.posts %}{% if post.url != page.url and shown < 4 %}{% assign shown = shown | plus: 1 %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a><span>{{ post.date | date: "%-d %b %Y" }}</span></li>{% endif %}{% endfor %}{% endcapture %}
+  {% if shown > 0 %}
+  <section class="more-stories">
+    <p class="kicker">{{ site.data.blog.earlier_kicker }}</p>
+    <ol>{{ more }}
+    </ol>
+    <a class="read" href="/blog/timeline/">see them all on the calendar <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h21M17 1.5 22 6l-5 4.5"/></svg></a>
+  </section>
+  {% endif %}
   </main>
 </div>
 <script src="/assets/side.js"></script>

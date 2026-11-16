@@ -196,6 +196,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .cal-card-mood{--c:var(--muted);font-size:.68rem;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--c);color:var(--c)}
 .cal-card-ex{margin:0;font-size:.8rem;line-height:1.5;color:var(--soft)}
 .cal-card .read{margin-top:.5rem;font-size:.85rem}
+.more-stories{display:none}
+.timeline-head a.tl-label{display:inline;font-size:inherit;color:inherit;text-decoration:none}
+.timeline-head a.tl-label:hover{color:var(--rose)}
 .empty{font-style:italic;color:var(--muted);padding:2rem 0}
 
 /* ---------- reading a post ---------- */
@@ -244,21 +247,24 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   .title-row h2{margin-bottom:.4rem}
   .view-post{margin-bottom:.7rem}
   body{font-size:15px;background-attachment:scroll}
-  .blog{grid-template-columns:1fr;gap:2.5rem;padding:2rem 1.25rem 4rem}
+  .blog{grid-template-columns:minmax(0,1fr);gap:2.5rem;padding:2rem 1.25rem 4rem}
   .side{position:static}
   .moods{margin-top:1.5rem;padding:0}
-  .timeline{display:none}
+  .timeline{margin-top:1.1rem;padding:0}
+  .timeline ol{display:none}
+  .reading-page .side .timeline{display:none}
   .cal-cell{min-height:52px}
   .cal-story{font-size:0;border-left-width:0;width:7px;height:7px;border-radius:50%;background:var(--c);padding:0}
-  .bio{display:grid;grid-template-columns:28px 1fr;column-gap:1rem;padding:1.4rem 1.3rem}
-  .bio-logo{grid-row:span 3;width:28px;height:56px;margin:0}
-  .bio h2{font-size:1.25rem;margin-bottom:.5rem}
-  .bio .kicker{margin:0}
-  .bio-text{grid-column:1 / -1;margin-top:.9rem}
+  .bio{display:grid;grid-template-columns:28px 1fr;grid-template-rows:28px 28px auto;column-gap:1rem;padding:1.4rem 1.3rem}
+  .bio-logo{grid-column:1;grid-row:1 / 3;width:28px;height:56px;margin:0}
+  .bio .kicker{grid-column:2;grid-row:1;align-self:end;margin:0 0 .1rem}
+  .bio h2{grid-column:2;grid-row:2;align-self:start;font-size:1.25rem;margin:0;line-height:1.15}
+  .bio-compact h2{grid-row:1;align-self:end;margin:0 0 .1rem}
+  .bio-sub{grid-column:2;grid-row:2;align-self:start}
+  .bio-compact{grid-template-rows:28px 28px;padding-bottom:1.4rem}
+  .bio-text{grid-column:1 / -1;grid-row:3;margin-top:.9rem}
   .feed-head h1{font-size:1.9rem}
-  .mood-bar{flex-wrap:nowrap;overflow-x:auto;margin:.5rem -1.25rem .2rem;padding:.2rem 1.25rem .5rem;scrollbar-width:none}
-  .mood-bar::-webkit-scrollbar{display:none}
-  .mood-bar .chip{flex:none}
+  .mood-bar{flex-wrap:wrap;margin:.5rem 0 .2rem}
   .mood-bar .chip::after,.mood-bar .chip::before{display:none}
   .post-card h2{font-size:1.3rem}
   .post-card.has-thumb{grid-template-columns:1fr;gap:1rem}
@@ -289,6 +295,17 @@ body::after{
 .deco-meadow{position:fixed;left:0;right:0;bottom:0;width:100%;height:170px;pointer-events:none;opacity:.8;z-index:0}
 
 @media (max-width:820px){
-  .deco-sprig{top:-26px;right:-12px;width:92px;transform:rotate(-40deg)}
+  .deco-sprig{top:-6px;right:-10px;width:88px;transform:rotate(-40deg)}
   .deco-constellation{position:absolute;top:.6rem;right:.6rem;width:150px;opacity:.18}
+}
+
+@media (max-width:820px){
+  .more-stories{display:block;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+  .more-stories .kicker{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted);margin:0 0 .6rem}
+  .more-stories ol{list-style:none;margin:0;padding:0;border-left:1px solid #d8c39a}
+  .more-stories li{position:relative;padding:.15rem 0 .65rem .9rem}
+  .more-stories li::before{content:"";position:absolute;left:-3.5px;top:.6rem;width:6px;height:6px;border-radius:50%;background:var(--paper);border:1px solid #c9ad78}
+  .more-stories li a{display:block;color:var(--ink);text-decoration:none;font-size:.95rem}
+  .more-stories li span{display:block;font-size:.72rem;color:var(--muted)}
+  .more-stories .read{margin-top:.6rem;font-size:.9rem}
 }
