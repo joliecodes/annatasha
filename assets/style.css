@@ -227,7 +227,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thought-date{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .thought-msg{margin:.15rem 0 0;font-size:.8rem;line-height:1.5;color:var(--soft);white-space:pre-wrap;overflow-wrap:anywhere}
 .thought-reply{margin:.55rem 0 0;padding:.5rem .65rem;background:#f6ecea;border-radius:4px}
-.thought-reply .thought-name{display:block;line-height:1.2;color:#9a6965;font-weight:600}
+.thought-reply .thought-name{display:block;position:relative;top:2px;line-height:1.2;color:#9a6965;font-weight:600}
 .thought-reply .thought-msg{margin-top:.2rem}
 .thoughts-empty{padding:.5rem .3rem .2rem;font-size:.8rem;font-style:italic;color:var(--muted)}
 .date,.post-card .date,.post-head .date,.cal-card .date{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted)}
