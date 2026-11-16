@@ -29,9 +29,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 /* ---------- landing ---------- */
 .note-wrap{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:2rem 1.25rem}
 .note{
-  max-width:430px;width:100%;text-align:center;
+  max-width:380px;width:100%;text-align:center;
   background:var(--card);border:1px solid var(--line);border-radius:3px;
-  padding:3rem 2.5rem 2.6rem;
+  padding:2.6rem 2.2rem 2.3rem;
   box-shadow:0 1px 1px rgba(60,45,30,.04),0 24px 50px -28px rgba(60,45,30,.28);
   animation:float-in .9s ease-out both;
 }
@@ -40,14 +40,16 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   background:url(/assets/pucuk-rebung.svg) center/18px 10px repeat-x;opacity:.75}
 .note::before{top:1rem}
 .note::after{bottom:1rem;transform:scaleY(-1)}
-.note-logo{width:60px;height:120px;margin:0 auto 1.6rem}
-.note-text{font-size:1.1rem;line-height:1.55;margin:.6rem 0 1.8rem;color:var(--ink)}
+.note-logo{width:40px;height:80px;margin:0 auto 1.3rem}
+.note-text{font-size:.94rem;line-height:1.65;margin:.5rem 0 1.5rem;color:var(--soft)}
+.note .kicker{font-size:.8rem}
+.note-text a,.bio-text a{color:var(--rose);text-decoration-thickness:1px;text-underline-offset:2px}
 .note-link{
   display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
-  font-style:italic;font-size:1.02rem;color:var(--rose);
+  font-style:italic;font-size:.9rem;color:var(--rose);
   border-bottom:1px solid currentColor;padding-bottom:1px;transition:gap .25s ease;
 }
-.note-link svg{width:18px;height:18px}
+.note-link svg{width:15px;height:15px}
 .note-link:hover{gap:.75rem}
 @keyframes float-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
@@ -129,6 +131,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thumb{display:block;margin-top:1.6rem}
 .thumb img{display:block;width:150px;height:150px;object-fit:cover;border-radius:3px;box-shadow:0 14px 30px -20px rgba(60,45,30,.5);transition:transform .3s}
 .thumb:hover img{transform:rotate(-1.5deg)}
+.featured{padding-bottom:2.4rem}
+.featured h2{font-size:1.85rem;margin-bottom:.8rem}
+.featured .prose{margin-top:1.8rem}
 .empty{font-style:italic;color:var(--muted);padding:2rem 0}
 
 /* ---------- reading a post ---------- */
