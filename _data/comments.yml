@@ -2,7 +2,7 @@
 # api and turnstile_sitekey are filled in by Claude once Cloudflare is set up.
 # The box stays hidden while either is empty.
 api: "https://annatasha-comments.joliecodes.workers.dev"
-turnstile_sitekey: ""
+turnstile_sitekey: "0x4AAAAAAGC87LwolhptNBgz"
 heading: "Thoughts?"
 button: "send it into the void"
 name_placeholder: "your name"
