@@ -35,7 +35,7 @@ blog_index: true
       <p class="date">{{ latest.date | date: "%-d %B %Y" }}</p>
       <div class="title-row">
         <h2><a href="{{ latest.url }}">{{ latest.title }}</a></h2>
-        <a class="read view-post" href="{{ latest.url }}">view post <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h21M17 1.5 22 6l-5 4.5"/></svg></a>
+        <a class="read view-post" href="{{ latest.url }}">view entry <svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h21M17 1.5 22 6l-5 4.5"/></svg></a>
       </div>
       {% if latest.moods %}<div class="chips">{% for s in latest.moods %}{% include mood-chip.html slug=s %}{% endfor %}</div>{% endif %}
       <div class="prose">{{ latest.content }}</div>

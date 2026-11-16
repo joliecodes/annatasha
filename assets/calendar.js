@@ -75,7 +75,7 @@
       body.appendChild(chips);
     }
     if (s.x) body.appendChild(el('p', 'cal-card-ex', s.x));
-    if (touch) { var r = el('a', 'read', 'read →'); r.href = s.u; body.appendChild(r); }
+    if (touch) { var r = el('a', 'read', 'view entry →'); r.href = s.u; body.appendChild(r); }
     card.appendChild(body);
     card.hidden = false;
     var rect = a.getBoundingClientRect(), cw = card.offsetWidth, ch = card.offsetHeight;
