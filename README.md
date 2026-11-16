@@ -20,17 +20,12 @@ The two sample posts are in `_posts/`. Delete them from the editor once your rea
 ## Adding a brand-new mood
 Moods can be renamed in the editor, but a new one needs an icon, so ask Claude to add it to `_data/moods.yml`. It shows up in the post editor automatically.
 
-## Going live (one-time setup)
-1. **GitHub:** create a new repository (e.g. `annatasha-site`), then upload everything in this folder to the `main` branch.
-2. **Netlify:** Add new site → Import an existing project → GitHub → choose the repo. The build settings come from `netlify.toml`, so just deploy.
-3. **Turn on the editor login:** in Netlify, go to Project configuration → Identity → Enable Identity.
-   - Registration → set to **Invite only**.
-   - Services → **Git Gateway** → Enable.
-   - Identity → Invite users → invite your own email address. Open the email, accept, and you'll land on /admin to set a password.
-4. **Domain:** Netlify → Domain management → Add domain → `annatasha.com`. Then in **Hover** → DNS for annatasha.com:
-   - Delete the old Squarespace A/CNAME records for `@` and `www`.
-   - `A` record, host `@` → `75.2.60.5`
-   - `CNAME` record, host `www` → `<your-site-name>.netlify.app`
-   - DNS changes can take up to a day. Netlify adds HTTPS automatically.
+## Hosting
+- The site is built and published by **GitHub Pages** on every push to `main` (see `.github/workflows/pages.yml`).
+- Address: **blog.annatasha.com**. DNS at Hover: `CNAME` record, host `blog` → `joliecodes.github.io`.
+- The writing desk (/admin) logs in with **GitHub**. Netlify is only used for that login step (OAuth provider on the `annatasha` Netlify project); it no longer hosts the site.
 
-Only switch the DNS when you're ready to leave Squarespace. You can write on the free `.netlify.app` address until then.
+## Moving to annatasha.com later
+1. GitHub repo → Settings → Pages → Custom domain → `annatasha.com`, and change the `CNAME` file to match.
+2. Hover DNS for `@`: four `A` records → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153; `CNAME` `www` → `joliecodes.github.io`. Remove the Squarespace records.
+3. Update `url` in `_config.yml` and `site_url` / `display_url` in `admin/config.yml`.

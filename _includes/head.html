@@ -7,12 +7,3 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  // Sends you to the editor after accepting an invite / logging in from the homepage
-  if (window.netlifyIdentity) {
-    netlifyIdentity.on("init", function (user) {
-      if (!user) netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
-    });
-  }
-</script>

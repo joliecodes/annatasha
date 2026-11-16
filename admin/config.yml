@@ -1,9 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: joliecodes/annatasha
   branch: main
+  base_url: https://api.netlify.com
+  site_domain: annatasha.netlify.app
 
-site_url: https://www.annatasha.com
-display_url: https://www.annatasha.com
+site_url: https://blog.annatasha.com
+display_url: https://blog.annatasha.com
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
