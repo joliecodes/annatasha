@@ -1,7 +1,12 @@
-    <div class="bio">
+    <div class="bio{% if include.compact %} bio-compact{% endif %}">
       <img class="deco-sprig" src="/assets/deco/pin.svg" alt="" aria-hidden="true">
       <a href="/" class="bio-logo" aria-label="Home">{% include logo.svg %}</a>
+      {% if include.compact %}
+      <h2>{{ site.data.bio.name }}</h2>
+      <a class="bio-sub" href="/blog/">{{ site.data.blog.heading }}</a>
+      {% else %}
       <p class="kicker">{{ site.data.blog.bio_kicker }}</p>
       <h2>{{ site.data.bio.name }}</h2>
       <div class="bio-text">{{ site.data.bio.text | markdownify }}</div>
+      {% endif %}
     </div>

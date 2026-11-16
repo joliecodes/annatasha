@@ -141,7 +141,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .timeline li::before{content:"";position:absolute;left:-3.5px;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--paper);border:1px solid #c9ad78}
 .timeline a{display:block;font-size:.88rem;text-decoration:none;color:var(--ink)}
 .timeline a:hover{color:var(--rose)}
-.timeline span{display:block;font-size:.75rem;font-style:italic;color:var(--muted)}
+.timeline span{display:block;font-size:.72rem;color:var(--muted);margin-top:.05rem}
 .timeline-head{display:flex;align-items:center;gap:.45rem}
 .cal-link{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;color:#b9975a;transition:color .2s,background .2s}
 .cal-link svg{width:16px;height:16px}
@@ -167,6 +167,15 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .cal-month-list{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.45rem}
 .cal-month-list .chip{font-size:.78rem;padding:.3rem .7rem}
 .cal-page{padding-bottom:4rem}
+.side .kicker{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;line-height:1.4;color:var(--muted)}
+.timeline-head .cal-link{position:relative;top:3px}
+.bio-compact{padding-bottom:1.15rem}
+.bio-compact h2{margin:0 0 .15rem}
+.bio-sub{font-size:.85rem;color:var(--rose);text-decoration:none}
+.bio-sub:hover{text-decoration:underline;text-underline-offset:2px}
+.title-row{display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+.title-row h2{margin-bottom:.8rem}
+.view-post{flex:none;font-size:.9rem;white-space:nowrap}
 .empty{font-style:italic;color:var(--muted);padding:2rem 0}
 
 /* ---------- reading a post ---------- */
