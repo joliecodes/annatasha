@@ -4,6 +4,7 @@
 //   TURNSTILE_SECRET secret  (Turnstile widget → secret key)
 //   ADMIN_PASSWORD   secret  (your approval-page password)
 //   NTFY_TOPIC       variable (ntfy topic for phone alerts; leave empty to turn alerts off)
+//   NTFY_TOKEN       secret, optional (ntfy.sh access token, avoids shared-IP rate limits)
 
 const SITE = 'https://annatasha.com';
 const ALLOWED_ORIGINS = [SITE, 'https://www.annatasha.com', 'https://blog.annatasha.com', 'http://localhost:4000', 'http://127.0.0.1:4000'];
@@ -135,17 +136,22 @@ async function isAdmin(request, env) {
 
 async function notify(env, url, c) {
   // JSON publishing keeps titles with emoji or curly quotes intact
-  await fetch('https://ntfy.sh/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      topic: env.NTFY_TOPIC,
-      title: `New thought on "${(c.title || c.post).slice(0, 80)}"`,
-      message: `${c.name}: ${c.message}`.slice(0, 400),
-      click: `${url.origin}/admin`,
-      tags: ['crescent_moon'],
-    }),
-  }).catch(() => {});
+  const headers = { 'Content-Type': 'application/json' };
+  if (env.NTFY_TOKEN) headers['Authorization'] = 'Bearer ' + env.NTFY_TOKEN;
+  try {
+    const res = await fetch('https://ntfy.sh/', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        topic: env.NTFY_TOPIC,
+        title: `New thought on "${(c.title || c.post).slice(0, 80)}"`,
+        message: `${c.name}: ${c.message}`.slice(0, 400),
+        click: `${url.origin}/admin`,
+        tags: ['crescent_moon'],
+      }),
+    });
+    if (!res.ok) console.log('ntfy failed', res.status, await res.text());
+  } catch (e) { console.log('ntfy error', e.message); }
 }
 
 const ADMIN_HTML = `<!DOCTYPE html>
