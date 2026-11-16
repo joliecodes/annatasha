@@ -78,7 +78,7 @@ blog_index: true
   // keep the sidebar pinned, but let a tall sidebar scroll up until its bottom is visible
   (function () {
     var side = document.querySelector('.side');
-    function fit() { if (side) side.style.top = Math.min(48, window.innerHeight - side.offsetHeight - 24) + 'px'; }
+    function fit() { if (side) side.style.top = Math.min(72, window.innerHeight - side.offsetHeight - 20) + 'px'; }
     fit(); window.addEventListener('resize', fit);
   })();
 </script>
