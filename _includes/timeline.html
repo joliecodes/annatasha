@@ -2,7 +2,7 @@
         <li><a href="{{ post.url }}">{{ post.title }}</a><span>{{ post.date | date: "%-d %b %Y" }}</span></li>{% endif %}{% endfor %}{% endcapture %}
 {% if shown > 0 %}
     <div class="timeline">
-      <p class="kicker">{{ site.data.blog.earlier_kicker }}</p>
+      <p class="kicker timeline-head">{{ site.data.blog.earlier_kicker }}<a class="cal-link" href="/blog/timeline/" aria-label="See every story on a calendar" title="See every story on a calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"/></svg></a></p>
       <ol>{{ items }}
       </ol>
     </div>

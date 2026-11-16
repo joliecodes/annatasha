@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-{% if page.blog_index %}{% assign page_title = site.data.blog.heading %}{% else %}{% assign page_title = page.title %}{% endif %}<title>{% if page_title %}{{ page_title }} · {% endif %}Annatasha</title>
+{% if page.blog_index %}{% assign page_title = site.data.blog.heading %}{% elsif page.timeline_page %}{% assign page_title = site.data.blog.timeline_heading %}{% else %}{% assign page_title = page.title %}{% endif %}<title>{% if page_title %}{{ page_title }} · {% endif %}Annatasha</title>
 <meta name="description" content="Writing by Annatasha. Tender, unhinged, and everything in between.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">

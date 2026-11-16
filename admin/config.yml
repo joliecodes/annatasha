@@ -57,6 +57,8 @@ collections:
           - { label: Small line above the moods, name: moods_kicker, widget: string }
           - { label: Message when a mood has no posts, name: empty_text, widget: string }
           - { label: Small line above the older posts list, name: earlier_kicker, widget: string }
+          - { label: Calendar page heading, name: timeline_heading, widget: string }
+          - { label: Calendar page subtitle, name: timeline_sub, widget: string }
       - label: Moods
         name: moods
         file: _data/moods.yml
