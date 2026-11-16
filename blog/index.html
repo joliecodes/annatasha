@@ -40,6 +40,7 @@ blog_index: true
       </div>
       {% if latest.moods %}<div class="chips">{% for s in latest.moods %}{% include mood-chip.html slug=s %}{% endfor %}</div>{% endif %}
       <div class="prose">{{ latest.content }}</div>
+      <footer class="post-foot featured-foot"><span class="sign">— Annatasha</span></footer>
     </article>
     {% endif %}
 
@@ -51,7 +52,7 @@ blog_index: true
     <p class="empty" hidden>{{ site.data.blog.empty_text }}</p>
   </main>
 </div>
-<script src="/assets/moods.js"></script>
-<script src="/assets/side.js"></script>
+<script src="/assets/moods.js?v={{ site.time | date: "%s" }}"></script>
+<script src="/assets/side.js?v={{ site.time | date: "%s" }}"></script>
 </body>
 </html>

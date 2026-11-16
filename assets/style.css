@@ -197,6 +197,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .cal-card-ex{margin:0;font-size:.8rem;line-height:1.5;color:var(--soft)}
 .cal-card .read{margin-top:.5rem;font-size:.85rem}
 .more-stories{display:none}
+.date,.post-card .date,.post-head .date,.cal-card .date{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted)}
+.timeline span,.more-stories li span{text-transform:uppercase;letter-spacing:.12em;font-size:.6rem}
+.featured-foot{margin-top:2.2rem}
 .mobile-head{display:none}
 .timeline-head a.tl-label{display:inline;font-size:inherit;color:inherit;text-decoration:none}
 .timeline-head a.tl-label:hover{color:var(--rose)}

@@ -59,7 +59,7 @@ timeline_page: true
   window.STORIES = [{% for post in site.posts %}{% assign thumb = nil %}{% assign img_parts = post.content | split: '<img' %}{% if img_parts.size > 1 %}{% assign src_parts = img_parts[1] | split: 'src="' %}{% if src_parts.size > 1 %}{% assign thumb = src_parts[1] | split: '"' | first %}{% endif %}{% endif %}{"t":{{ post.title | jsonify }},"u":{{ post.url | jsonify }},"d":"{{ post.date | date: '%Y-%m-%d' }}","nice":"{{ post.date | date: '%-d %B %Y' }}","m":{{ post.moods | jsonify }},"x":{{ post.excerpt | strip_html | strip_newlines | truncatewords: 26 | jsonify }},"i":{{ thumb | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
   window.MOODS = { {% for m in site.data.moods.moods %}{{ m.slug | jsonify }}:{"c":{{ m.color | jsonify }},"n":{{ m.name | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %} };
 </script>
-<script src="/assets/calendar.js"></script>
-<script src="/assets/side.js"></script>
+<script src="/assets/calendar.js?v={{ site.time | date: "%s" }}"></script>
+<script src="/assets/side.js?v={{ site.time | date: "%s" }}"></script>
 </body>
 </html>
