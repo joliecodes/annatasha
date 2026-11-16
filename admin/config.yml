@@ -35,6 +35,7 @@ collections:
         value_field: "moods.*.slug"
         multiple: true
         required: false
+      - { label: "Live on the site", name: published, widget: boolean, default: true, required: false, hint: "Switch off to keep this as a draft. It saves, but stays hidden until you switch it back on and Save." }
       - { label: Words, name: body, widget: markdown, hint: "Photo captions: add a line of *italics* right under a photo." }
 
   - name: site

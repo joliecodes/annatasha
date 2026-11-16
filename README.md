@@ -4,7 +4,7 @@ Landing page and blog. Jekyll site with a writing desk (Sveltia CMS) at **/admin
 
 ## Writing (day to day)
 1. Go to **annatasha.com/admin** and sign in with your access token.
-2. **Posts → New Post.** Add a title, a date and your moods, then write.
+2. **Posts → New Post.** Add a title, a date and your moods, then write. **Save** publishes it; switch off **Live on the site** first to keep it as a draft.
    - Photos: use the image button in the editor. To add a caption, put a line of *italics* right under the photo.
    - A line made of `---` becomes a little ✦ ✦ ✦ divider.
 3. Click **Publish**. The site updates in about a minute.
