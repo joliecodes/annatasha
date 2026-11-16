@@ -2,8 +2,6 @@ backend:
   name: github
   repo: joliecodes/annatasha
   branch: main
-  base_url: https://api.netlify.com
-  site_domain: annatasha.netlify.app
 
 site_url: https://blog.annatasha.com
 display_url: https://blog.annatasha.com

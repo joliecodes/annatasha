@@ -3,7 +3,7 @@
 Landing page and blog. Jekyll site with a writing desk (Decap CMS) at **/admin**, hosted on Netlify.
 
 ## Writing (day to day)
-1. Go to **www.annatasha.com/admin** and log in.
+1. Go to **blog.annatasha.com/admin** and sign in with your access token.
 2. **Posts → New Post.** Add a title, a date and your moods, then write.
    - Photos: use the image button in the editor. To add a caption, put a line of *italics* right under the photo.
    - A line made of `---` becomes a little ✦ ✦ ✦ divider.
@@ -23,7 +23,7 @@ Moods can be renamed in the editor, but a new one needs an icon, so ask Claude t
 ## Hosting
 - The site is built and published by **GitHub Pages** on every push to `main` (see `.github/workflows/pages.yml`).
 - Address: **blog.annatasha.com**. DNS at Hover: `CNAME` record, host `blog` → `joliecodes.github.io`.
-- The writing desk (/admin) logs in with **GitHub**. Netlify is only used for that login step (OAuth provider on the `annatasha` Netlify project); it no longer hosts the site.
+- The writing desk (/admin) is Sveltia CMS. Sign in with **Sign In Using Access Token**, using a GitHub fine-grained token for `joliecodes/annatasha` with Contents: Read and write. If it expires, make a new one the same way.
 
 ## Moving to annatasha.com later
 1. GitHub repo → Settings → Pages → Custom domain → `annatasha.com`, and change the `CNAME` file to match.
