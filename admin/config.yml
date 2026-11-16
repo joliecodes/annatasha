@@ -10,11 +10,15 @@ display_url: https://blog.annatasha.com
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+editor:
+  preview: false
+
 collections:
   - name: posts
     label: Posts
     label_singular: Post
     folder: _posts
+    editor: { preview: false }
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sortable_fields: [date, title]
@@ -37,6 +41,7 @@ collections:
 
   - name: site
     label: Site text
+    editor: { preview: false }
     files:
       - label: About the writer
         name: bio
