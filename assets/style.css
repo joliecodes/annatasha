@@ -201,7 +201,11 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thoughts{margin-top:1.1rem;padding:0 .25rem}
 .thoughts-head{text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted);font-style:normal;margin:0 0 .5rem}
 .thoughts-scroll{max-height:300px;overflow-y:auto;overscroll-behavior:contain;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.5rem .5rem .2rem;
-  -webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 28px),transparent);scrollbar-width:thin}
+  -webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 28px),transparent);scrollbar-width:thin;scrollbar-color:#d8c39a transparent}
+.thoughts-scroll::-webkit-scrollbar{width:6px}
+.thoughts-scroll::-webkit-scrollbar-track{background:transparent;margin:6px 0}
+.thoughts-scroll::-webkit-scrollbar-thumb{background:#d8c39a;border-radius:999px}
+.thoughts-scroll::-webkit-scrollbar-thumb:hover{background:#c2a878}
 .thoughts-form{margin-top:.4rem}
 .thoughts-form input,.thoughts-form textarea{display:block;width:100%;font:inherit;font-size:.82rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:4px;padding:.45rem .55rem;margin:0 0 .4rem}
 .thoughts-form textarea{resize:vertical;min-height:62px;line-height:1.45}
