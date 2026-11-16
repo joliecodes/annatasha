@@ -18,7 +18,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sortable_fields: [date, title]
-    summary: "{{title}} · {{year}}-{{month}}-{{day}}"
+    summary: "{{title}}"
     fields:
       - { label: Layout, name: layout, widget: hidden, default: post }
       - { label: Title, name: title, widget: string }
