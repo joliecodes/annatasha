@@ -29,6 +29,8 @@
       if (show) shown++;
     });
     empty.hidden = shown > 0;
+    var older = document.querySelector('.older-head');
+    if (older) older.hidden = !document.querySelector('.posts > .post-card:not([hidden])');
   }
 
   buttons.forEach(function (b) {

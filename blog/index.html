@@ -44,6 +44,7 @@ blog_index: true
     </article>
     {% endif %}
 
+    {% if site.posts.size > 1 %}<p class="older-head">{{ site.data.blog.older_kicker }}</p>{% endif %}
     <ol class="posts">
       {% for post in site.posts offset: 1 %}
       {% include post-preview.html post=post %}

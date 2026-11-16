@@ -201,8 +201,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .timeline span,.more-stories li span{text-transform:uppercase;letter-spacing:.12em;font-size:.6rem}
 .featured-foot{margin-top:2.2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
 .post-card.featured{padding-bottom:0}
-.featured:not([hidden]) + .posts > .post-card:first-child{padding-top:1.9rem}
-.featured:not([hidden]) + .posts > .post-card:first-child::before{display:none}
+.older-head{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--soft);margin:2rem 0 0}
+.older-head + .posts > .post-card:first-child{padding-top:1.6rem}
+.older-head + .posts > .post-card:first-child::before{display:none}
 .mobile-head{display:none}
 .timeline-head a.tl-label{display:inline;font-size:inherit;color:inherit;text-decoration:none}
 .timeline-head a.tl-label:hover{color:var(--rose)}
