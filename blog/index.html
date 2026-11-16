@@ -21,11 +21,21 @@ blog_index: true
       <nav class="mood-bar" aria-label="Filter posts by mood">
         <button class="chip chip-all is-on" data-mood="" type="button">All</button>
         {% for m in site.data.moods.moods %}
-        <button class="chip" type="button" data-mood="{{ m.slug }}" data-caption="{{ m.caption }}" style="--c:{{ m.color }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ m.icon }}</svg>{{ m.name }}</button>
+        <button class="chip" type="button" data-mood="{{ m.slug }}" data-caption="{{ m.caption }}" style="--c:{{ m.color }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ m.icon }}</svg>{{ m.name }}<span class="x" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg></span></button>
         {% endfor %}
       </nav>
-      <p class="mood-now" aria-live="polite"></p>
     </div>
+
+    {% if site.posts.size > 1 %}
+    <div class="timeline">
+      <p class="kicker">{{ site.data.blog.earlier_kicker }}</p>
+      <ol>
+        {% for post in site.posts offset: 1 limit: 5 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a><span>{{ post.date | date: "%-d %b %Y" }}</span></li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% endif %}
   </aside>
 
   <main class="feed">
@@ -64,5 +74,13 @@ blog_index: true
   </main>
 </div>
 <script src="/assets/moods.js"></script>
+<script>
+  // keep the sidebar pinned, but let a tall sidebar scroll up until its bottom is visible
+  (function () {
+    var side = document.querySelector('.side');
+    function fit() { if (side) side.style.top = Math.min(48, window.innerHeight - side.offsetHeight - 24) + 'px'; }
+    fit(); window.addEventListener('resize', fit);
+  })();
+</script>
 </body>
 </html>

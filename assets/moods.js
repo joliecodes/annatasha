@@ -1,42 +1,44 @@
 (function () {
-  var buttons = document.querySelectorAll('.mood-bar .chip');
+  var allBtn = document.querySelector('.mood-bar .chip-all');
+  var buttons = document.querySelectorAll('.mood-bar .chip[data-mood]:not(.chip-all)');
   var cards = document.querySelectorAll('.post-card');
   var empty = document.querySelector('.empty');
-  var now = document.querySelector('.mood-now');
+
+  function selected() {
+    var h = decodeURIComponent(location.hash.slice(1));
+    return h ? h.split(',').filter(Boolean) : [];
+  }
+  function save(list) {
+    history.replaceState(null, '', list.length ? '#' + list.join(',') : location.pathname);
+    apply();
+  }
 
   function apply() {
-    var mood = decodeURIComponent(location.hash.slice(1));
-    var found = false, shown = 0;
+    var picked = selected(), shown = 0;
     buttons.forEach(function (b) {
-      var on = b.dataset.mood === mood;
-      if (on) found = true;
+      var on = picked.indexOf(b.dataset.mood) > -1;
       b.classList.toggle('is-on', on);
       b.setAttribute('aria-pressed', on);
     });
-    if (!found) { mood = ''; buttons[0].classList.add('is-on'); }
+    allBtn.classList.toggle('is-on', picked.length === 0);
     cards.forEach(function (c) {
-      var show = !mood || (' ' + c.dataset.moods + ' ').indexOf(' ' + mood + ' ') > -1;
+      var moods = (c.dataset.moods || '').split(' ');
+      var show = !picked.length || picked.some(function (m) { return moods.indexOf(m) > -1; });
       c.hidden = !show;
       c.classList.toggle('first-visible', show && shown === 0);
       if (show) shown++;
     });
     empty.hidden = shown > 0;
-    var active = document.querySelector('.mood-bar .chip.is-on');
-    now.textContent = mood && active ? 'feeling ' + active.dataset.caption : '';
   }
 
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
-      var m = b.dataset.mood;
-      var current = decodeURIComponent(location.hash.slice(1));
-      if (!m || m === current) {
-        history.replaceState(null, '', location.pathname);
-      } else {
-        history.replaceState(null, '', '#' + m);
-      }
-      apply();
+      var list = selected(), m = b.dataset.mood, i = list.indexOf(m);
+      if (i > -1) list.splice(i, 1); else list.push(m);
+      save(list);
     });
   });
+  allBtn.addEventListener('click', function () { save([]); });
   window.addEventListener('hashchange', apply);
   apply();
 })();

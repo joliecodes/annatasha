@@ -59,7 +59,6 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   display:grid;grid-template-columns:270px 1fr;gap:5rem;align-items:start;
 }
 .side{position:sticky;top:3rem}
-@media (max-height:760px){.side{position:static}}
 .bio{
   position:relative;
   background:var(--card);border:1px solid var(--line);border-radius:3px;
@@ -93,6 +92,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .chip.is-on{background:var(--c);border-color:var(--c);color:#fffdf8}
 .chip.is-on svg{color:#fffdf8}
 .chip-all{padding-left:.85rem}
+.chip .x{display:none;width:14px;height:14px;margin:0 -.2rem 0 .1rem;border-radius:50%;background:rgba(255,253,248,.25);place-items:center}
+.chip .x svg{width:9px;height:9px;color:#fffdf8}
+.chip.is-on .x{display:inline-grid}
 /* caption bubble */
 .chip[data-caption]::after{
   content:attr(data-caption);
@@ -108,7 +110,6 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   .chip[data-caption]:hover::after,.chip[data-caption]:hover::before{opacity:1;transform:translate(-50%,0)}
 }
 .chip[data-caption]:focus-visible::after,.chip[data-caption]:focus-visible::before{opacity:1;transform:translate(-50%,0)}
-.mood-now{min-height:1.5em;margin:0;font-style:italic;color:var(--muted);font-size:.95rem}
 
 /* post list */
 .posts{list-style:none;margin:0;padding:0}
@@ -134,6 +135,13 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .featured{padding-bottom:2.4rem}
 .featured h2{font-size:1.85rem;margin-bottom:.8rem}
 .featured .prose{margin-top:1.8rem}
+.timeline{margin-top:1.6rem;padding:0 .25rem}
+.timeline ol{list-style:none;margin:.5rem 0 0;padding:0;border-left:1px solid #d8c39a}
+.timeline li{position:relative;padding:.15rem 0 .55rem .9rem;line-height:1.35}
+.timeline li::before{content:"";position:absolute;left:-3.5px;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--paper);border:1px solid #c9ad78}
+.timeline a{display:block;font-size:.88rem;text-decoration:none;color:var(--ink)}
+.timeline a:hover{color:var(--rose)}
+.timeline span{display:block;font-size:.75rem;font-style:italic;color:var(--muted)}
 .empty{font-style:italic;color:var(--muted);padding:2rem 0}
 
 /* ---------- reading a post ---------- */
@@ -176,6 +184,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   .blog{grid-template-columns:1fr;gap:2.5rem;padding:2rem 1.25rem 4rem}
   .side{position:static}
   .moods{margin-top:1.5rem;padding:0}
+  .timeline{display:none}
   .bio{display:grid;grid-template-columns:28px 1fr;column-gap:1rem;padding:1.4rem 1.3rem}
   .bio-logo{grid-row:span 3;width:28px;height:56px;margin:0}
   .bio h2{font-size:1.25rem;margin-bottom:.5rem}
