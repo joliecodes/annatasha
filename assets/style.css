@@ -198,7 +198,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .cal-card .read{margin-top:.5rem;font-size:.85rem}
 .more-stories{display:none}
 /* ---------- Thoughts? ---------- */
-.thoughts{margin-top:1.1rem;padding:0 .25rem}
+.thoughts{margin-top:1.1rem;padding:0}
 .thoughts-head{text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted);font-style:normal;margin:0 0 .5rem}
 .thoughts-scroll{max-height:300px;overflow-y:auto;overscroll-behavior:contain;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.5rem .5rem .2rem;
   -webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 60px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 60px),transparent);scrollbar-width:none}
@@ -226,8 +226,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thought-name{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#4b6141}
 .thought-date{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .thought-msg{margin:.15rem 0 0;font-size:.8rem;line-height:1.5;color:var(--soft);white-space:pre-wrap;overflow-wrap:anywhere}
-.thought-reply{margin:.55rem 0 0;padding:.45rem .65rem;background:#f6ecea;border-radius:4px}
-.thought-reply .thought-name{color:#9a6965;font-weight:600}
+.thought-reply{margin:.55rem 0 0;padding:.5rem .65rem;background:#f6ecea;border-radius:4px}
+.thought-reply .thought-name{display:block;line-height:1.2;color:#9a6965;font-weight:600}
+.thought-reply .thought-msg{margin-top:.2rem}
 .thoughts-empty{padding:.5rem .3rem .2rem;font-size:.8rem;font-style:italic;color:var(--muted)}
 .date,.post-card .date,.post-head .date,.cal-card .date{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted)}
 .timeline span,.more-stories li span{text-transform:uppercase;letter-spacing:.12em;font-size:.6rem}
