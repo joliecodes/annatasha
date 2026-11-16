@@ -207,9 +207,9 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thoughts-form textarea{resize:vertical;min-height:62px;line-height:1.45}
 .thoughts-form input:focus,.thoughts-form textarea:focus{outline:none;border-color:var(--rose)}
 .thoughts-captcha:empty{display:none}
-.thoughts-top{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;margin:0 0 .5rem}
+.thoughts-top{display:flex;align-items:baseline;gap:.7rem;margin:0 0 .5rem}
 .thoughts-top .thoughts-head{margin:0}
-.thoughts-toggle{display:inline-flex;align-items:center;gap:.3rem;font:inherit;font-size:.8rem;font-style:italic;color:var(--rose);background:none;border:0;padding:0;cursor:pointer}
+.thoughts-toggle{display:inline-flex;align-items:center;gap:.3rem;font:inherit;font-size:.8rem;font-style:normal;color:var(--rose);background:none;border:0;padding:0;cursor:pointer}
 .thoughts-toggle svg{width:14px;height:14px}
 .thoughts-toggle:hover,.thoughts-toggle.is-open{text-decoration:underline;text-underline-offset:3px}
 .thoughts-form{padding-bottom:.2rem}
@@ -223,11 +223,11 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .thought{padding:.65rem 0;border-bottom:1px solid var(--line)}
 .thought:last-child{border-bottom:0}
 .thought-meta{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin:0 0 .15rem}
-.thought-name{font-size:.82rem;font-weight:500;color:var(--ink)}
+.thought-name{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink)}
 .thought-date{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .thought-msg{margin:0;font-size:.82rem;line-height:1.5;color:var(--soft);white-space:pre-wrap;overflow-wrap:anywhere}
 .thought-reply{margin:.5rem 0 0 .2rem;padding-left:.6rem;border-left:2px solid var(--rose)}
-.thought-reply .thought-name{color:var(--rose);font-style:italic;font-weight:400}
+.thought-reply .thought-name{color:var(--rose);font-weight:500}
 .thoughts-empty{padding:.7rem 0 .2rem;font-size:.8rem;font-style:italic;color:var(--muted)}
 .date,.post-card .date,.post-head .date,.cal-card .date{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--muted)}
 .timeline span,.more-stories li span{text-transform:uppercase;letter-spacing:.12em;font-size:.6rem}
