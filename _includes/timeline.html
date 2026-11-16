@@ -1,0 +1,9 @@
+{% assign shown = 0 %}{% capture items %}{% for post in site.posts %}{% if post.url != include.exclude and shown < 5 %}{% assign shown = shown | plus: 1 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a><span>{{ post.date | date: "%-d %b %Y" }}</span></li>{% endif %}{% endfor %}{% endcapture %}
+{% if shown > 0 %}
+    <div class="timeline">
+      <p class="kicker">{{ site.data.blog.earlier_kicker }}</p>
+      <ol>{{ items }}
+      </ol>
+    </div>
+{% endif %}

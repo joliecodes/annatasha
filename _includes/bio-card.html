@@ -1,0 +1,7 @@
+    <div class="bio">
+      <img class="deco-sprig" src="/assets/deco/pin.svg" alt="" aria-hidden="true">
+      <a href="/" class="bio-logo" aria-label="Home">{% include logo.svg %}</a>
+      <p class="kicker">{{ site.data.blog.bio_kicker }}</p>
+      <h2>{{ site.data.bio.name }}</h2>
+      <div class="bio-text">{{ site.data.bio.text | markdownify }}</div>
+    </div>

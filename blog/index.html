@@ -8,13 +8,7 @@ blog_index: true
 <img class="deco-constellation" src="/assets/deco/space.webp" alt="" aria-hidden="true">
 <div class="blog">
   <aside class="side">
-    <div class="bio">
-      <img class="deco-sprig" src="/assets/deco/pin.svg" alt="" aria-hidden="true">
-      <a href="/" class="bio-logo" aria-label="Home">{% include logo.svg %}</a>
-      <p class="kicker">{{ site.data.blog.bio_kicker }}</p>
-      <h2>{{ site.data.bio.name }}</h2>
-      <div class="bio-text">{{ site.data.bio.text | markdownify }}</div>
-    </div>
+    {% include bio-card.html %}
 
     <div class="moods">
       <p class="kicker">{{ site.data.blog.moods_kicker }}</p>
@@ -26,16 +20,8 @@ blog_index: true
       </nav>
     </div>
 
-    {% if site.posts.size > 1 %}
-    <div class="timeline">
-      <p class="kicker">{{ site.data.blog.earlier_kicker }}</p>
-      <ol>
-        {% for post in site.posts offset: 1 limit: 5 %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a><span>{{ post.date | date: "%-d %b %Y" }}</span></li>
-        {% endfor %}
-      </ol>
-    </div>
-    {% endif %}
+    {% assign latest_url = site.posts.first.url %}
+    {% include timeline.html exclude=latest_url %}
   </aside>
 
   <main class="feed">
@@ -74,13 +60,6 @@ blog_index: true
   </main>
 </div>
 <script src="/assets/moods.js"></script>
-<script>
-  // keep the sidebar pinned, but let a tall sidebar scroll up until its bottom is visible
-  (function () {
-    var side = document.querySelector('.side');
-    function fit() { if (side) side.style.top = Math.min(72, window.innerHeight - side.offsetHeight - 20) + 'px'; }
-    fit(); window.addEventListener('resize', fit);
-  })();
-</script>
+<script src="/assets/side.js"></script>
 </body>
 </html>

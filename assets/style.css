@@ -145,13 +145,16 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
 .empty{font-style:italic;color:var(--muted);padding:2rem 0}
 
 /* ---------- reading a post ---------- */
-.reading{max-width:640px;margin:0 auto;padding:2.5rem 1.5rem 6rem}
-.topbar{display:flex;align-items:center;gap:.9rem;margin-bottom:4rem}
+.reading{max-width:660px;padding:0;margin:0}
+.topbar{display:flex;align-items:center;gap:.9rem;margin:.4rem 0 3rem}
+.topbar .back{display:inline-flex;align-items:center;gap:.5rem}
+.topbar .back svg{width:22px;height:11px;transition:transform .25s}
+.topbar .back:hover svg{transform:translateX(-3px)}
 .mini-logo{display:block;width:20px;height:40px}
 .back{font-style:italic;color:var(--muted);text-decoration:none;font-size:.95rem}
 .back:hover{color:var(--rose)}
 .sizer{margin-left:auto;display:flex;gap:.25rem}
-.sizer button{font-family:var(--serif);background:none;border:1px solid var(--line);border-radius:999px;color:var(--soft);
+.sizer button{font-family:var(--serif);background:var(--card);border:1px solid var(--line);border-radius:999px;color:var(--soft);
   width:2rem;height:2rem;display:grid;place-items:center;cursor:pointer;padding:0;transition:border-color .2s,color .2s}
 .sizer button:hover:not(:disabled){border-color:var(--rose);color:var(--ink)}
 .sizer button:disabled{opacity:.35;cursor:default}
@@ -200,7 +203,7 @@ h1,h2{font-weight:500;letter-spacing:-.01em;line-height:1.15}
   .thumb{order:-1}
   .thumb{margin-top:0}
   .thumb img{width:100%;height:auto;aspect-ratio:2/1}
-  .reading{padding:1.75rem 1.25rem 4rem}
+  .reading{padding:0}
   .topbar{margin-bottom:2.5rem}
   .post-head h1{font-size:1.8rem}
   .prose{font-size:calc(1rem * var(--reader, 1))}
