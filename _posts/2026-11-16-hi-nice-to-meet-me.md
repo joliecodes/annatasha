@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hi, nice to meet me.
-date: 2026-11-17 01:04
+date: 2026-11-17 01:52
 moods:
   - big-feelings
   - analysing-the-multiverse
@@ -17,7 +17,7 @@ The crazy part is that the lows were the lowest and the highs turned out to be l
 
 I may have spoken about it briefly--and I know I joke about it a lot, it's a defence mechanism--but I officially got diagnosed neurodivergent August of 2025. And how did it come to that? 
 
-Woof. Like I said, _so_ much happened. Ironically, they weren't happening directly to me, it was me-adjacent, but boy did it do a number on me. So much so that I was convinced I was developing chronic anxiety. When I was 19, I was diagnosed with GAD, which gave me the ticket to "explaining" why I was such an anxious person, and I thought "Well, alright then. It is what I'm told it is." But during last year's saga of shit hitting the fan, the physical reaction I was having to it, the discomfort, I thought I need to see a doctor again. I need to have a plan, whether it be more therapy or maybe officially start medication, I didn't care, I could NOT be the anxious wreck I was everyday, not with Jolie always with me. Jolie deserves the world and she deserves a mother who is well. 
+Woof. Like I said, _so_ much happened. Ironically, they weren't happening directly to me, it was me-adjacent, but boy did it do a number on me. So much so that I was convinced I was developing chronic anxiety. When I was 19, I was diagnosed with GAD, which gave me the ticket to "explaining" why I was such an anxious person, and I thought "Well, alright then. It is what I'm told it is." But during last year's saga of shit hitting the fan, the physical reaction I was having to it, the discomfort, I had to see a doctor again. I needed to have a plan, whether it be more therapy or maybe officially start medication, I didn't care, I could NOT be the anxious wreck I was everyday, not with Jolie always with me. Jolie deserves the world and she deserves a mother who is well. 
 
 I went to a psychiatrist, one that was recommended by my dear uncle's good friend, basically begging to be fixed. And just like when I was 19, I was told I have GAD. And for the first time, I was prescribed SSRIs/anti-depressants. I asked the doctor if he could also just evaluate me for ADHD; I knew the symptoms and I checked almost every thing on the list. He made me take some tests, spoke to me about my life, asked me why I suspected ADHD, told me I'm just probably going through a bout of depression + anxiety, prescribed me some meds and sent me on my merry way.
 
@@ -39,7 +39,7 @@ For the rest of 2025, I'm sure my treatment plan saved me from entirely losing m
 
 But then the me-adjacent issues settled. And then there was me. 
 
-I looked up in the mirror one day and suddenly I am 10kg lighter (and not the "Wow! Yay!" kind). I lost 10kg in about 1.5 months. That could not have been healthy, but I don't know, I never went for checkup on that. Now that all the me-adjacent noise has quieted, I can suddenly hear myself, and nothing about myself felt familiar. Like, who am I? Who am I without all the noise? The noise kept me from really looking at myself, and maybe in some messed up way, that's what I wanted. I wanted to avoid addressing anything about myself.
+I looked in the mirror one day and suddenly I am 10kg lighter (and not the "Wow! Yay! Hot Girl Summer 2k25!" kind). I lost 10kg in about 1.5 months. That could not have been healthy, but I don't know, I never went for checkup on that. Now that all the me-adjacent noise has quieted, I can suddenly hear myself, and nothing about myself felt familiar. Like, who am I? Who am I without all the noise? The noise kept me from really looking at myself, and maybe in some messed up way, that's what I wanted. I wanted to avoid addressing anything about myself.
 
 I am now 1+ years in on my revelation of my brain. And now it that it's quiet again (more noise came up this year--and I tell you I have never been in so much ache and pain in my life), it feels as though I'm meeting myself again.
 
