@@ -57,6 +57,6 @@ I could boil it down to upbringing, or maybe my mother's choice of words as she 
 
 I gotta stop waiting for people to feed me validation. I need to start _liking_ myself.
 
-I've always said that, when used in this context, "liking" me is--in this moment--more important than "loving me".
+> I've always said that, when used in this context, "liking" me is--in this moment--more important than "loving me".
 
 But liking me also mean liking the version of me I personally like the most, and she's not been here for a hot moment. She comes back to me once in a while, but
