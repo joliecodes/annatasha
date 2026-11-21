@@ -8,15 +8,12 @@ display_url: https://annatasha.com
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-editor:
-  preview: false
 
 collections:
   - name: posts
     label: Posts
     label_singular: Post
     folder: _posts
-    editor: { preview: false }
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sortable_fields: [date, title]
