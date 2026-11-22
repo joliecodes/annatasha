@@ -5,7 +5,7 @@ date: 2026-11-22 19:47
 moods:
   - unhinged
 potty_mouth: true
-published: true
+published: false
 ---
 
 Good morning from the hospital bed and hello from the other side of the My Chemical Romance saga. 
