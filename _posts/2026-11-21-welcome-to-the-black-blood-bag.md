@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Welcome to the Black Blood Bag.
-date: 2026-11-21 10:19
+title: Welcome to the Blood Parade.
+date: 2026-11-22 09:46
 moods:
   - unhinged
 potty_mouth: true
-published: true
+published: false
 ---
 
-Hello from the other side of the My Chemical Romance saga!
+Good morning from the hospital bed and hello from the other side of the My Chemical Romance saga. 
 
-I had a very deep, reflecting post ready to go as my first big post on my new website layout. But I cannot not start with this story. This REALLY feels like 2006 monkeydisease.blogspot again--what with me writing about MCR?!
+Initially I had a whole
