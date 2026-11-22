@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Welcome to the Blood Parade.
-date: 2026-11-22 19:47
+date: 2026-11-22 09:47
 moods:
   - unhinged
 potty_mouth: true
