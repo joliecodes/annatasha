@@ -8,5 +8,49 @@
 </head>
 <body>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <script>
+  // Keep the typing line in view: when the cursor gets near the bottom of the
+  // screen while writing, scroll so it sits about a third of the way up.
+  (function () {
+    function scroller(el) {
+      for (var n = el; n && n !== document.body; n = n.parentElement) {
+        var oy = getComputedStyle(n).overflowY;
+        if ((oy === 'auto' || oy === 'scroll') && n.scrollHeight > n.clientHeight + 1) return n;
+      }
+      return null;
+    }
+    function caretBottom(t) {
+      if (t.tagName === 'TEXTAREA') {
+        if (t.value.length - t.selectionEnd > 40) return null;
+        return t.getBoundingClientRect().bottom - 8;
+      }
+      var sel = window.getSelection();
+      if (!sel || !sel.rangeCount) return null;
+      var r = sel.getRangeAt(0).cloneRange(); r.collapse(false);
+      var rects = r.getClientRects();
+      if (rects.length) return rects[rects.length - 1].bottom;
+      var node = r.endContainer.nodeType === 1 ? r.endContainer : r.endContainer.parentElement;
+      return node ? node.getBoundingClientRect().bottom : null;
+    }
+    function keep(e) {
+      var t = e.target;
+      if (!t || !(t.isContentEditable || t.tagName === 'TEXTAREA')) return;
+      requestAnimationFrame(function () {
+        var y = caretBottom(t);
+        if (y == null) return;
+        var box = scroller(t);
+        var top = box ? box.getBoundingClientRect().top : 0;
+        var h = box ? box.clientHeight : window.innerHeight;
+        var limit = top + h * 0.67;
+        if (y > limit) {
+          var dy = y - limit;
+          if (box) box.scrollTop += dy; else window.scrollBy(0, dy);
+        }
+      });
+    }
+    document.addEventListener('input', keep, true);
+    document.addEventListener('keyup', function (e) { if (e.key === 'Enter' || e.key.indexOf('Arrow') === 0) keep(e); }, true);
+  })();
+  </script>
 </body>
 </html>
